@@ -23,6 +23,8 @@ run the following command: uvicorn main:app --reload
 Navigate to the frontend folder
 run the following command **in a second terminal**: streamlit run app.py
 
+Open http://localhost:8501 in your browser to access the app.
+
 ## Technologies Used
 
 - **Backend**: FastAPI, OpenAI GPT-4o
