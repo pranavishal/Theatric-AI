@@ -42,7 +42,7 @@ async def generate_logline(request: TextRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/generate-synopsis/")
-async def generate_logline(request: TextRequest):
+async def generate_synopsis(request: TextRequest):
     try:
         if not request.refinement:
             response = openai.chat.completions.create(
