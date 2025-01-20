@@ -3,7 +3,7 @@ import requests
 import os
 
 # Ensure the Outputs directory exists
-OUTPUTS_DIR = "../Outputs"
+OUTPUTS_DIR = "./Outputs"
 if not os.path.exists(OUTPUTS_DIR):
     os.makedirs(OUTPUTS_DIR)
 
