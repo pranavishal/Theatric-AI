@@ -10,6 +10,8 @@ PAGES = {
     "Synopsis Generator": synopsis
 }
 
+
+
 # Sidebar navigation
 st.sidebar.title("Theatric.AI Navigation")
 if st.sidebar.button("Go to Logline Generator"):
