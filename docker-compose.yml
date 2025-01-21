@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: theatratic-backend-container
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=your_openai_api_key
+    networks:
+      - theatratic-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: theatratic-frontend-container
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend/Outputs:/app/Outputs
+    networks:
+      - theatratic-network
+
+networks:
+  theatratic-network:
+    driver: bridge
+
