@@ -7,8 +7,9 @@ OUTPUTS_DIR = "./Outputs"
 if not os.path.exists(OUTPUTS_DIR):
     os.makedirs(OUTPUTS_DIR)
 
+
 def run():
-    API_BASE_URL = "http://theatratic-backend-container:8000"  # Backend URL
+    API_BASE_URL = "http://127.0.0.1:8000"  # Backend URL
 
     # Title of the app
     st.title("Theatric.AI - Logline Generator")
@@ -31,8 +32,7 @@ def run():
         if prompt.strip():
             try:
                 response = requests.post(
-                    f"{API_BASE_URL}/generate-logline/",
-                    json={"prompt": prompt}
+                    f"{API_BASE_URL}/generate_logline/", json={"prompt": prompt}
                 )
                 if response.status_code == 200:
                     st.session_state["logline"] = response.json().get("logline")
@@ -53,11 +53,11 @@ def run():
                 try:
                     with st.spinner("Refining logline... Please wait!"):
                         response = requests.post(
-                            f"{API_BASE_URL}/generate-logline/",
+                            f"{API_BASE_URL}/generate_logline/",
                             json={
                                 "prompt": st.session_state["logline"],
-                                "refinement": refinement
-                            }
+                                "refinement": refinement,
+                            },
                         )
                         if response.status_code == 200:
                             st.session_state["logline"] = response.json().get("logline")
@@ -75,7 +75,7 @@ def run():
         "Generated Logline:",
         value=st.session_state["logline"] or "No logline generated yet.",
         height=150,
-        disabled=st.session_state["complete"]
+        disabled=st.session_state["complete"],
     )
 
     # Mark as Complete and Save Logline
@@ -94,4 +94,3 @@ def run():
     # Navigation to the next page
     if st.session_state["complete"] and st.button("Next ->"):
         st.session_state["current_page"] = "Synopsis Generator"
-

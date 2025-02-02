@@ -7,8 +7,9 @@ OUTPUTS_DIR = "./Outputs"
 if not os.path.exists(OUTPUTS_DIR):
     os.makedirs(OUTPUTS_DIR)
 
+
 def run():
-    API_BASE_URL = "http://theatratic-backend-container:8000"  # Backend URL
+    API_BASE_URL = "http://127.0.0.1:8000"  # Backend URL
 
     # Initialize session state variables
     if "synopsis" not in st.session_state:
@@ -30,8 +31,8 @@ def run():
                 with open(logline_file, "r") as file:
                     fileContents = file.read()
                 response = requests.post(
-                    f"{API_BASE_URL}/generate-synopsis/",
-                    json={"formerPrompt": fileContents}
+                    f"{API_BASE_URL}/generate_synopsis/",
+                    json={"formerPrompt": fileContents},
                 )
                 if response.status_code == 200:
                     st.session_state["synopsis"] = response.json().get("synopsis")
@@ -51,7 +52,7 @@ def run():
         "Generated Synopsis:",
         value=st.session_state["synopsis"] or "No synopsis generated yet.",
         height=150,
-        disabled=st.session_state["complete_synopsis"]
+        disabled=st.session_state["complete_synopsis"],
     )
 
     # Mark as Complete (Optional future feature)
@@ -66,4 +67,3 @@ def run():
                 st.error(f"Error saving synopsis: {e}")
         else:
             st.warning("Please generate a synopsis first.")
-

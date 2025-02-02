@@ -5,11 +5,7 @@ if "current_page" not in st.session_state:
     st.session_state["current_page"] = "Logline Generator"
 
 # Page registry
-PAGES = {
-    "Logline Generator": logline,
-    "Synopsis Generator": synopsis
-}
-
+PAGES = {"Logline Generator": logline, "Synopsis Generator": synopsis}
 
 
 # Sidebar navigation

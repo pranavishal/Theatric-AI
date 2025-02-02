@@ -1,61 +1,35 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-import openai
-import os
-from dotenv import load_dotenv
-
-# Loading env variables (the openai gpt4 api key)
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from fastapi.middleware.cors import CORSMiddleware
+from services.logline.models import LoglineRequest
+from services.synopsis.models import SynopsisRequest
+from services.logline.service import generate_logline
+from services.synopsis.service import generate_synopsis
 
 app = FastAPI()
 
-class TextRequest(BaseModel):
-    prompt: str = ""
-    refinement: str = ""
-    formerPrompt: str = ""
+# Enable CORS for frontend communication
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this for security in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.post("/generate-logline/")
-async def generate_logline(request: TextRequest):
+
+@app.post("/generate_logline")
+async def generate_logline_endpoint(request: LoglineRequest):
     try:
-        if not request.refinement:
-            response = openai.chat.completions.create(
-                model="gpt-4o",
-                messages=[
-                    {"role": "system", "content": "You are a screenwriting assistant. You are to help generate a logline based on the information you recive in the prompt. If the prompt is empty, generate one completely by yourself."},
-                    {"role": "user", "content": f"Create a logline: {request.prompt}"}
-                ],
-                temperature=0.5
-            )
-            return {"logline": response.choices[0].message.content}
-        else:
-            response = openai.chat.completions.create(
-                model="gpt-4o",
-                messages=[
-                    {"role": "system", "content": "You are a screenwriting assistant. You are to help generate a logline based on the information you recive in the prompt, or help refine an existing prompt based on refinement feedback."},
-                    {"role": "user", "content": f"The current logline is {request.prompt}. Refine it with the following instructions: {request.refinement}"}
-                ],
-                temperature=0.5
-            )
-            return {"logline": response.choices[0].message.content}
+        logline = generate_logline(request)
+        return {"logline": logline}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/generate-synopsis/")
-async def generate_synopsis(request: TextRequest):
+
+@app.post("/generate_synopsis")
+async def generate_synopsis_endpoint(request: SynopsisRequest):
     try:
-        if not request.refinement:
-            response = openai.chat.completions.create(
-                model="gpt-4o",
-                messages=[
-                    {"role": "system", "content": """You are a screenwriting assistant. 
-                     You are to help generate a synopsis based on the logline you recieve in the prompt. 
-                     It is to be a few paragraphs in length with the purpose of fleshing out the idea given in the logline. 
-                     Be detailed, introduce characters, setting, and give the user a lot of clarity about the story from them reading your synopsis."""},
-                    {"role": "user", "content": f"The logline is currently {request.formerPrompt}. Expand on this idea to make it a full synopsis."}
-                ],
-                temperature=0.5
-            )
-            return {"synopsis": response.choices[0].message.content}
+        synopsis = generate_synopsis(request)
+        return {"synopsis": synopsis}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
