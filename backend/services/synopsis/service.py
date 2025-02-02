@@ -2,11 +2,9 @@ import openai
 from config.env import must_get_env
 from services.synopsis.models import SynopsisRequest
 
-# Configure OpenAI API key
-openai.api_key = must_get_env("OPEN_API_KEY")
-
 
 def generate_synopsis(request: SynopsisRequest) -> str:
+    openai.api_key = must_get_env("OPEN_API_KEY")
     messages = [
         {
             "role": "system",
