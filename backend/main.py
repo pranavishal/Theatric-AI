@@ -5,6 +5,7 @@ from services.synopsis.models import SynopsisRequest
 from services.logline.service import generate_logline
 from services.synopsis.service import generate_synopsis
 
+
 app = FastAPI()
 
 # Enable CORS for frontend communication
@@ -15,6 +16,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 
 @app.post("/generate_logline")

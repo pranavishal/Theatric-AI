@@ -4,7 +4,7 @@ from services.synopsis.models import SynopsisRequest
 
 
 def generate_synopsis(request: SynopsisRequest) -> str:
-    openai.api_key = must_get_env("OPEN_API_KEY")
+    openai.api_key = must_get_env("OPENAI_API_KEY")
     messages = [
         {
             "role": "system",
@@ -23,4 +23,4 @@ def generate_synopsis(request: SynopsisRequest) -> str:
     response = openai.chat.completions.create(
         model="gpt-4o", messages=messages, temperature=0.5
     )
-    return {"synopsis": response.choices[0].message.content}
+    return response.choices[0].message.content

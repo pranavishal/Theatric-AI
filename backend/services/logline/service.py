@@ -4,7 +4,7 @@ from services.logline.models import LoglineRequest
 
 
 def generate_logline(request: LoglineRequest) -> str:
-    openai.api_key = must_get_env("OPEN_API_KEY")
+    openai.api_key = must_get_env("OPENAI_API_KEY")
     messages = [
         {
             "role": "system",
@@ -39,4 +39,4 @@ def generate_logline(request: LoglineRequest) -> str:
             ],
             temperature=0.5,
         )
-    return {"logline": response.choices[0].message.content.strip()}
+    return response.choices[0].message.content.strip()
