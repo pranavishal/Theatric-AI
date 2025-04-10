@@ -1,11 +1,11 @@
 import streamlit as st
-from pages import logline, synopsis
+from pages import logline, synopsis, scenes
 
 if "current_page" not in st.session_state:
     st.session_state["current_page"] = "Logline Generator"
 
 # Page registry
-PAGES = {"Logline Generator": logline, "Synopsis Generator": synopsis}
+PAGES = {"Logline Generator": logline, "Synopsis Generator": synopsis, "Scenes Generator": scenes}
 
 
 # Sidebar navigation

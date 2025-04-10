@@ -67,3 +67,7 @@ def run():
                 st.error(f"Error saving synopsis: {e}")
         else:
             st.warning("Please generate a synopsis first.")
+    
+    # Navigation to the next page
+    if st.session_state["complete_synopsis"] and st.button("Next ->"):
+        st.session_state["current_page"] = "Scenes Generator"
