@@ -1,0 +1,40 @@
+```json
+[
+    {
+        "scene_id": 1,
+        "summary": "Aerial shot of a sprawling urban landscape at dusk, with towering skyscrapers casting long shadows over the city, while neon lights flicker to life in the red-light district below.",
+        "tone": "gritty, atmospheric",
+        "duration": 8
+    },
+    {
+        "scene_id": 2,
+        "summary": "Close-up of a neon sign buzzing above a narrow alleyway, casting a pink and blue glow on rain-slicked streets as pedestrians hurry by, their faces obscured by shadows.",
+        "tone": "mysterious, tense",
+        "duration": 6
+    },
+    {
+        "scene_id": 3,
+        "summary": "A bustling city street during the day, filled with people rushing past each other, their faces a blur of determination and anonymity, while Luna stands still, observing the chaos with a knowing gaze.",
+        "tone": "busy, observant",
+        "duration": 7
+    },
+    {
+        "scene_id": 4,
+        "summary": "Inside a dimly lit, smoke-filled underground club, with silhouettes of people dancing and mingling, as the camera pans to reveal the tense exchange between Victor and Elena in a secluded corner.",
+        "tone": "intense, secretive",
+        "duration": 9
+    },
+    {
+        "scene_id": 5,
+        "summary": "A montage of Luna and her allies, including Marcus and Tara, moving through the city at night, gathering evidence, and exchanging secretive glances and documents.",
+        "tone": "suspenseful, collaborative",
+        "duration": 10
+    },
+    {
+        "scene_id": 6,
+        "summary": "Dramatic shot of Luna standing atop a rooftop, looking out over the city as the first light of dawn breaks, symbolizing hope and a new beginning.",
+        "tone": "hopeful, triumphant",
+        "duration": 8
+    }
+]
+```

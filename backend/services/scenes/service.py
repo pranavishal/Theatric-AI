@@ -14,6 +14,11 @@ def generate_scenes(request: SceneRequest) -> str:
 
                         Each scene should be described as a film shot — atmospheric, visual, and short (5–12 seconds in duration). These will be sent to SORA or another video generator, so make sure you give enough detail.
 
+                        Also, do remember: THIS IS A TRAILER! Each scene shouldn't just be a chronological retelling of the synopsis. We don't just want to give away the flow of events.
+                        Instead, think of the most visually striking moments that would entice an audience to watch the film. Don't give away vital ingformation or the ending.
+                        The scenes should be visually distinct and create a sense of anticipation, excitement, or intrigue.
+
+
                         Return the result as a JSON list. Each object must include:
                         - scene_id (1–6)
                         - summary (1–2 sentences describing the visual shot, avoiding character detail)

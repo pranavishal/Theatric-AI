@@ -14,6 +14,10 @@ if st.sidebar.button("Go to Logline Generator"):
     st.session_state["current_page"] = "Logline Generator"
 if st.sidebar.button("Go to Synopsis Generator"):
     st.session_state["current_page"] = "Synopsis Generator"
+if st.sidebar.button("Go to Scenes Generator"):
+    st.session_state["current_page"] = "Scenes Generator"
+# Display the current page title
+st.title(f"{st.session_state['current_page']}")
 
 # Load the selected page
 current_page = st.session_state["current_page"]

@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import os
+import time 
 
 # Ensure the Outputs directory exists
 OUTPUTS_DIR = "./Outputs"
@@ -18,6 +19,9 @@ def run():
     if "scenes" not in st.session_state:
         st.session_state["scenes"] = None
     
+    if "complete" not in st.session_state:
+         st.session_state["complete"] = False
+    
 
 
     synopsis_file = os.path.join(OUTPUTS_DIR, "synopsis.txt")
@@ -32,6 +36,13 @@ def run():
              if response.status_code == 200:
                     st.session_state["scenes"] = response.json().get("scenes")
                     st.success("scenes generated successfully!")
+                    try:
+                        with open(os.path.join(OUTPUTS_DIR, "scenes.txt"), "w") as file:
+                            file.write(st.session_state["scenes"])
+                        st.success("Scenes saved successfully!")
+                        st.session_state["complete"] = True
+                    except Exception as e:
+                        st.error(f"Error saving scenes: {e}")
              else:
                     st.error(f"Error: {response.status_code} - {response.text}")
                          
@@ -51,6 +62,13 @@ def run():
         height=150,
         disabled=True,
     )
+
+    # Navigation to the next page
+    if st.session_state["complete"] and st.button("Generate Trailer ->"):
+        with st.spinner("Generating Trailer..."):
+             time.sleep(10)
+
+
         
         
     
