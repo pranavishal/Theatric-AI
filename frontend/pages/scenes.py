@@ -22,6 +22,9 @@ def run():
     if "complete" not in st.session_state:
          st.session_state["complete"] = False
     
+    if "narration" not in st.session_state:
+         st.session_state["narration"] = None
+    
 
 
     synopsis_file = os.path.join(OUTPUTS_DIR, "synopsis.txt")
@@ -65,8 +68,17 @@ def run():
 
     # Navigation to the next page
     if st.session_state["complete"] and st.button("Generate Trailer ->"):
-        with st.spinner("Generating Trailer..."):
-             time.sleep(10)
+        narration = requests.post(
+             f"{API_BASE_URL}/generate_narration/",
+             json={"scenes": st.session_state["scenes"]},             
+        )
+
+        if narration.status_code == 200:
+            st.session_state["narration"] = narration.json().get("narration")
+            st.success("Trailer generated successfully!")
+            print(st.session_state["narration"])
+        else:
+            st.error(f"Error: {narration.status_code} - {narration.text}")
 
 
         
