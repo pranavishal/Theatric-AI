@@ -28,6 +28,9 @@ def generate_scenes(request: SceneRequest) -> str:
                         It is also important to remember that the trailer will have voice narration when created. So when you are giving these scene descriptions, make them
                         something that can easily be described or be talked about with a narrator or monologue voiceover relating to the visuals and story.
 
+                        Please DO NOT FALL INTO THE TRAP OF ALWAYS TRYING TO SHOW A HOPEFUL OR BRIGHT FUTURE AT THE END OF THE TRAILER. MIX IT UP.
+                        ONLY DO SOMETHING LIKE THAT IF IT FITS THE SYNOPSIS. IF ITS MEANT TO BE DARK, DO NOT MAKE IT LIGHT.
+
                        """,
         },
         {

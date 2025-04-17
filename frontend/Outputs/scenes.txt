@@ -1,40 +1,40 @@
 ```json
 [
-    {
-        "scene_id": 1,
-        "summary": "A wide shot of the quaint town of Meadowbrook, with rustling autumn leaves and cobblestone streets bathed in golden sunlight, capturing the essence of a place where time seems to slow down.",
-        "tone": "nostalgic",
-        "duration": 7
-    },
-    {
-        "scene_id": 2,
-        "summary": "A rainy afternoon in the town park, where Robert stands under a large oak tree, water droplets glistening on his umbrella, as he spots the scruffy stray dog, Max, with a playful glint in its eyes.",
-        "tone": "serendipitous",
-        "duration": 8
-    },
-    {
-        "scene_id": 3,
-        "summary": "Inside Robert's cozy living room, Max playfully knocks over a stack of books, bringing a sense of chaos and laughter into the once silent and orderly space.",
-        "tone": "light-hearted",
-        "duration": 6
-    },
-    {
-        "scene_id": 4,
-        "summary": "A montage of Robert and Max exploring the town, visiting various quirky local spots and meeting colorful characters, each offering a piece of Max's mysterious past.",
-        "tone": "adventurous",
-        "duration": 10
-    },
-    {
-        "scene_id": 5,
-        "summary": "A tender moment in the garden, where Robert and Emily share a heartfelt conversation, surrounded by blooming flowers, as Max playfully chases butterflies in the background.",
-        "tone": "heartwarming",
-        "duration": 9
-    },
-    {
-        "scene_id": 6,
-        "summary": "A serene sunset over Meadowbrook, with Robert and Max silhouetted against the horizon, symbolizing the newfound joy and hope in Robert's life.",
-        "tone": "uplifting",
-        "duration": 7
-    }
+  {
+    "scene_id": 1,
+    "summary": "Aerial shot of Maplewood, a picturesque suburban town with perfectly manicured lawns and identical houses, reflecting an illusion of perfection.",
+    "tone": "idyllic yet superficial",
+    "duration": 7
+  },
+  {
+    "scene_id": 2,
+    "summary": "Inside a dimly lit room, a close-up of Harold's meticulously arranged desk, with neatly stacked papers and a clock ticking loudly, symbolizing his obsession with order.",
+    "tone": "tense and rigid",
+    "duration": 6
+  },
+  {
+    "scene_id": 3,
+    "summary": "Montage of Alex's vibrant art pieces scattered across his cluttered studio, bursting with color and creativity, in stark contrast to the rest of the house.",
+    "tone": "expressive and rebellious",
+    "duration": 8
+  },
+  {
+    "scene_id": 4,
+    "summary": "A chaotic scene at a family vacation, with Harold frantically trying to maintain control amidst a series of comedic mishaps, as the family looks on in disbelief.",
+    "tone": "chaotic and humorous",
+    "duration": 10
+  },
+  {
+    "scene_id": 5,
+    "summary": "Harold stands alone at the edge of a crowded art exhibition, his face a mix of confusion and realization as he sees Alex's art celebrated by others.",
+    "tone": "isolated and introspective",
+    "duration": 9
+  },
+  {
+    "scene_id": 6,
+    "summary": "In the soft glow of Alex's art studio, Harold and Alex share a tentative smile, surrounded by the colorful paintings, as the camera pulls back to show their journey of reconciliation beginning.",
+    "tone": "hopeful and heartfelt",
+    "duration": 12
+  }
 ]
 ```
