@@ -20,6 +20,9 @@ def generate_narration(request: NarrationRequest) -> str:
                        - Keep each narration line short enough to fit within its scene's duration (see timing)
                        - Format output clearly: "Scene 1: ..." up to "Scene 6: ..."
 
+                       Please DO NOT FALL INTO THE TRAP OF ALWAYS TRYING TO SHOW A HOPEFUL OR BRIGHT FUTURE AT THE END OF THE TRAILER. MIX IT UP.
+                       ONLY DO SOMETHING LIKE THAT IF IT FITS THE SYNOPSIS. IF ITS MEANT TO BE DARK, DO NOT MAKE IT LIGHT.
+
                        """,
         },
         {

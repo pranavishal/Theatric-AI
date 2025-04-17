@@ -1,40 +1,40 @@
 ```json
 [
-  {
-    "scene_id": 1,
-    "summary": "Aerial shot of Maplewood, a picturesque suburban town with perfectly manicured lawns and identical houses, reflecting an illusion of perfection.",
-    "tone": "idyllic yet superficial",
-    "duration": 7
-  },
-  {
-    "scene_id": 2,
-    "summary": "Inside a dimly lit room, a close-up of Harold's meticulously arranged desk, with neatly stacked papers and a clock ticking loudly, symbolizing his obsession with order.",
-    "tone": "tense and rigid",
-    "duration": 6
-  },
-  {
-    "scene_id": 3,
-    "summary": "Montage of Alex's vibrant art pieces scattered across his cluttered studio, bursting with color and creativity, in stark contrast to the rest of the house.",
-    "tone": "expressive and rebellious",
-    "duration": 8
-  },
-  {
-    "scene_id": 4,
-    "summary": "A chaotic scene at a family vacation, with Harold frantically trying to maintain control amidst a series of comedic mishaps, as the family looks on in disbelief.",
-    "tone": "chaotic and humorous",
-    "duration": 10
-  },
-  {
-    "scene_id": 5,
-    "summary": "Harold stands alone at the edge of a crowded art exhibition, his face a mix of confusion and realization as he sees Alex's art celebrated by others.",
-    "tone": "isolated and introspective",
-    "duration": 9
-  },
-  {
-    "scene_id": 6,
-    "summary": "In the soft glow of Alex's art studio, Harold and Alex share a tentative smile, surrounded by the colorful paintings, as the camera pulls back to show their journey of reconciliation beginning.",
-    "tone": "hopeful and heartfelt",
-    "duration": 12
-  }
+    {
+        "scene_id": 1,
+        "summary": "A wide shot reveals a barren, post-apocalyptic landscape cloaked in eternal darkness, with faint silhouettes of crumbling buildings and twisted trees stretching into the horizon.",
+        "tone": "bleak",
+        "duration": 7
+    },
+    {
+        "scene_id": 2,
+        "summary": "Close-up of Elias's hands as he unfurls a tattered map under the dim glow of a makeshift lantern, the map's edges frayed and marked with cryptic symbols pointing to 'The Haven.'",
+        "tone": "hopeful yet somber",
+        "duration": 6
+    },
+    {
+        "scene_id": 3,
+        "summary": "A mysterious, eerie glow emanates from bioluminescent fungi that illuminate an otherwise pitch-black settlement, casting dancing shadows on the walls.",
+        "tone": "mysterious",
+        "duration": 5
+    },
+    {
+        "scene_id": 4,
+        "summary": "A tense, wide-angle shot of Elias and Mara navigating a treacherous, rocky terrain, with ominous clouds swirling above them and distant figures lurking in the shadows.",
+        "tone": "tense",
+        "duration": 8
+    },
+    {
+        "scene_id": 5,
+        "summary": "Inside a dimly lit cavern, Silas stands before a group of followers, his shadow looming large as he passionately gestures, the flickering flames casting an unsettling glow.",
+        "tone": "foreboding",
+        "duration": 9
+    },
+    {
+        "scene_id": 6,
+        "summary": "The final shot captures Elias standing alone on a desolate hill, the vast, starless sky above him, as he closes his eyes and embraces the enveloping darkness with a serene expression.",
+        "tone": "poignant",
+        "duration": 10
+    }
 ]
 ```
