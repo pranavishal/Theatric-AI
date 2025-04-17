@@ -68,9 +68,11 @@ def run():
 
     # Navigation to the next page
     if st.session_state["complete"] and st.button("Generate Trailer ->"):
+        with open(synopsis_file, "r") as file:
+            fileContents = file.read()
         narration = requests.post(
-             f"{API_BASE_URL}/generate_narration/",
-             json={"scenes": st.session_state["scenes"]},             
+             f"{API_BASE_URL}/generate_trailer/",
+             json={"promptBase": st.session_state["scenes"], "promptContext": fileContents},             
         )
 
         if narration.status_code == 200:

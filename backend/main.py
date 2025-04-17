@@ -4,10 +4,12 @@ from services.logline.models import LoglineRequest
 from services.synopsis.models import SynopsisRequest
 from services.scenes.models import SceneRequest
 from services.narration.models import NarrationRequest
+from services.prompts.models import PromptRequest
 from services.logline.service import generate_logline
 from services.synopsis.service import generate_synopsis
 from services.scenes.service import generate_scenes
 from services.narration.service import generate_narration
+from services.prompts.service import generate_prompt
 
 
 
@@ -53,6 +55,19 @@ async def split_synopsis_into_scenes_endpoint(request: SceneRequest):
 async def generate_narration_endpoint(request: NarrationRequest):
     try:
         narration = generate_narration(request)
+        return {"narration": narration}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/generate_trailer")
+async def generate_trailer_endpoint(request: PromptRequest):
+    try:
+        theNarrationReq = NarrationRequest(
+            scenes=request.promptBase,
+        )
+        narration = generate_narration(theNarrationReq)
+        prompts = generate_prompt(request)
+        print(prompts)
         return {"narration": narration}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

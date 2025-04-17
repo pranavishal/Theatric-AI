@@ -2,5 +2,5 @@ from pydantic import BaseModel
 
 class PromptRequest(BaseModel):
     promptBase: str
-    promptType: str
+    promptType: str = ""
     promptContext: str
